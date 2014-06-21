@@ -68,7 +68,7 @@ class BootstrapNavbar extends BootstrapElement {
 				"class" => array(
 						"navbar",
 						($this->inverse ? 'navbar-inverse' : 'navbar-default'),
-						($this->fixed ? 'navbar-fixed' : '')
+						($this->fixed ? 'navbar-fixed-top' : '')
 					),
 			), $container);
 
