@@ -1,6 +1,6 @@
-#Bootstrap.php: Hyper-rapid development
+#Bootstrap.php: Hyper-rapid Prototyping
 
-Spend less time writing HTML and more time developing. Still working on developing the docs so bare with me.
+Spend less time writing HTML and more time prototyping. Still working on developing the docs so bare with me.
 
 ##Carousel Example
 	$slides = array(
@@ -68,3 +68,16 @@ Spend less time writing HTML and more time developing. Still working on developi
 
 	$grid = new BootstrapGrid("grid-id", "grid-class", $columns);
 	$grid->render();
+
+###Button
+	$button = new BootstrapButton(array(
+				"id" => "some-id",
+				"class" => "some-class",
+				"type" => "warning",
+				"href" => "#",
+				"tag" => "a",
+				"block" => true,
+				"large" => true,
+				"text" => "Warning! Don't click this!"
+			));
+	$button->render();
