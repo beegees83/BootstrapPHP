@@ -81,3 +81,22 @@ Spend less time writing HTML and more time prototyping. Still working on develop
 				"text" => "Warning! Don't click this!"
 			));
 	$button->render();
+
+###Form Example
+	$fields = array(
+			new BootstrapFormField(array(
+				"type" => "text", "name" => "username", "label" => "Username",
+				)),
+			new BootstrapFormField(array(
+				"type" => "password", "name" => "password", "label" => "Password",
+				)),
+			new BootstrapFormField(array(
+				"type" => "submit", "value" => "Log In"
+				)),
+		);
+
+	$form = new BootstrapForm(array(
+			"id" => "login-form", "fields" => $fields,
+		));
+
+	$form->render();

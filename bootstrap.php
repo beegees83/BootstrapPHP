@@ -6,3 +6,4 @@ require_once("carousel.php");
 require_once("grid.php");
 require_once("navbar.php");
 require_once("panels.php");
+require_once("form.php");

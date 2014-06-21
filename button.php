@@ -7,9 +7,11 @@ class BootstrapButton extends BootstrapElement {
 	public $href;
 	public $tag;
 	public $block;
-	public $large;
+	public $size;
 	public $text;
-
+	public $disabled;
+	public $active;
+	
 	public function __construct($params = null) {
 		$this->get_params_or_default(array(
 				"id" => "",
@@ -18,24 +20,39 @@ class BootstrapButton extends BootstrapElement {
 				"href" => "",
 				"tag" => "a",
 				"block" => false,
-				"large" => false,
-				"text" => ""
+				"size" => false,
+				"text" => "",
+				"disabled" => false,
+				"active" => false,
 			), $params);
 	}
 
 	public function toHtml() {
 		$classes = array(
 				"btn", 'btn-' . $this->type,
-				($this->large ? "btn-lg", ""),
-				($this->block ? "btn-block", ""),
+				($this->large ? "btn-lg" : ""),
+				($this->block ? "btn-block" : ""),
+				($this->size ? "btn-" . $this->size : "")
+				($this->disabled ? "disabled" : ""),
+				($this->active ? "active" : ""),
 				$this->class
 			);
 
-		$html = $this->tag($this->tag, array(
+		$attributes = array(
 				"id" => $this->id,
 				"class" => $classes,
 				"href" => $this->href,
-			), $this->text);
+			);
+
+		if ($this->disabled) {
+			$attributes["disabled"] = "disabled";
+		}
+
+		if  {
+			$attributes["disabled"] = "disabled";
+		}
+
+		$html = $this->tag($this->tag, $attributes, $this->text);
 
 		return $html;
 	}

@@ -15,9 +15,17 @@ class BootstrapElement {
 
 	protected function generate_attr($attribute, $values) {
 		$html = $attribute . '="';
-		foreach ($values as $value) {
-			if (!empty($value)) {
-				$html .= $value . " ";
+
+		if (is_array($values)) {
+			foreach ($values as $value) {
+				if (!empty($value)) {
+					$html .= $value . " ";
+				}
+			}
+		}
+		else {
+			if (!empty($values)) {
+				$html .= $values . " ";
 			}
 		}
 
